@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Rick and Morty</string>
+    <string name="characters">Characters</string>
+    <string name="character_details">Character Details</string>
+    <string name="loading">Loading...</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="episodes">Episodes</string>
+    <string name="gender">Gender</string>
+    <string name="origin">Origin</string>
+    <string name="location">Location</string>
+    <string name="status_alive">Alive</string>
+    <string name="status_dead">Dead</string>
+    <string name="status_unknown">Unknown</string>
+    <string name="back">Back</string>
+    <string name="loading_character_details">Loading character details...</string>
+    <string name="loading_more_episodes">Loading more episodes...</string>
+    <string name="all_episodes_loaded">All episodes loaded (%1$d total)</string>
+    <string name="failed_to_load_episodes">Failed to load episodes: %1$s</string>
+    <string name="type">Type</string>
+    <string name="rick_and_morty_characters">Rick and Morty Characters</string>
+    <string name="loading_characters">Loading characters...</string>
+</resources>
