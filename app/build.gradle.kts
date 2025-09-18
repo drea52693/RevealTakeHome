@@ -36,6 +36,14 @@ android {
   buildFeatures {
     compose = true
   }
+  
+  packaging {
+    resources {
+      excludes += "/META-INF/{AL2.0,LGPL2.1}"
+      excludes += "META-INF/LICENSE.md"
+      excludes += "META-INF/LICENSE-notice.md"
+    }
+  }
 }
 
 dependencies {
@@ -73,11 +81,22 @@ dependencies {
   // Logging
   implementation(libs.timber)
   
+  // Unit Testing
   testImplementation(libs.junit)
+  testImplementation(libs.kotlinx.coroutines.test)
+  testImplementation(libs.mockk)
+  testImplementation(libs.turbine)
+  testImplementation(libs.hilt.android.testing)
+  
+  // Android Testing
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
   androidTestImplementation(platform(libs.androidx.compose.bom))
   androidTestImplementation(libs.androidx.ui.test.junit4)
+  androidTestImplementation(libs.hilt.android.testing)
+  androidTestImplementation(libs.mockk.android)
+  
+  // Debug Testing
   debugImplementation(libs.androidx.ui.tooling)
   debugImplementation(libs.androidx.ui.test.manifest)
 }
