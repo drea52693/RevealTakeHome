@@ -20,6 +20,10 @@ android {
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
+  buildFeatures {
+    buildConfig = true
+  }
+
   buildTypes {
     release {
       isMinifyEnabled = false
@@ -59,10 +63,11 @@ dependencies {
   
   // Networking
   implementation(libs.retrofit)
-  implementation(libs.retrofit.gson)
+  implementation(libs.retrofit.moshi)
   implementation(libs.okhttp)
   implementation(libs.okhttp.logging)
-  implementation(libs.gson)
+  implementation(libs.moshi)
+  implementation(libs.moshi.kotlin)
   
   // Navigation
   implementation(libs.androidx.navigation.compose)
@@ -77,6 +82,9 @@ dependencies {
   implementation(libs.hilt.android)
   implementation(libs.hilt.navigation.compose)
   kapt(libs.hilt.compiler)
+  
+  // Moshi codegen
+  kapt(libs.moshi.kotlin)
   
   // Logging
   implementation(libs.timber)

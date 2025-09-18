@@ -1,7 +1,9 @@
 package ai.revealtech.hsinterview.data.model
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class Character(
     val id: Int,
     val name: String,
@@ -17,15 +19,17 @@ data class Character(
     val created: String
 )
 
+@JsonClass(generateAdapter = true)
 data class Location(
     val name: String,
     val url: String
 )
 
+@JsonClass(generateAdapter = true)
 data class Episode(
     val id: Int,
     val name: String,
-    @SerializedName("air_date")
+    @Json(name = "air_date")
     val airDate: String,
     val episode: String,
     val characters: List<String>,
@@ -33,16 +37,13 @@ data class Episode(
     val created: String
 )
 
+@JsonClass(generateAdapter = true)
 data class CharactersResponse(
     val info: Info,
     val results: List<Character>
 )
 
-data class EpisodesResponse(
-    val info: Info,
-    val results: List<Episode>
-)
-
+@JsonClass(generateAdapter = true)
 data class Info(
     val count: Int,
     val pages: Int,

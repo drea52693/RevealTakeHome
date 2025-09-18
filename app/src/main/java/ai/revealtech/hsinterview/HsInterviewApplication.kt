@@ -1,5 +1,6 @@
 package ai.revealtech.hsinterview
 
+import ai.revealtech.hsinterview.BuildConfig
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
@@ -10,6 +11,8 @@ class HsInterviewApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        Timber.plant(Timber.DebugTree())
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
     }
 }
